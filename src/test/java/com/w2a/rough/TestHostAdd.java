@@ -13,6 +13,7 @@ public class TestHostAdd {
 
 	public static void main(String[] args) throws UnknownHostException, AddressException, MessagingException {
 
+		//the class which initiate the Emailing proccess
 		MonitoringMail mail = new MonitoringMail();
 		String messageBody = "http://" + InetAddress.getLocalHost().getHostAddress()
 				+ ":8080/job/DataDrivenLiveProject/Extent_Reports/";

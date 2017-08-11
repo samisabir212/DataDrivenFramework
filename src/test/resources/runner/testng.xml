@@ -11,21 +11,41 @@
     
 	<test name="Bank Manager Login Test">
 		<classes>
+<!--
 			<class name="com.w2a.testcases.BankManagerLoginTest" />
+-->
 		</classes>
 	</test> <!-- Test -->
 	
 	
 	<test name="Add Customer Test">
 		<classes>
+<!--
 			<class name="com.w2a.testcases.AddCustomerTest" />
+-->
 		</classes>
 	</test> <!-- Test -->
 	
 		<test name="Open Account Test">
 		<classes>
+<!--
 			<class name="com.w2a.testcases.OpenAccountTest" />
+-->
 		</classes>
 	</test> <!-- Test -->
+
+	<test name="Launch a browser">
+
+		  <classes>
+
+			  <class name="com.w2a.testcases.launchTest"/>
+
+
+		  </classes>
+
+	</test>
+
+
+
 	
 </suite> <!-- Suite -->

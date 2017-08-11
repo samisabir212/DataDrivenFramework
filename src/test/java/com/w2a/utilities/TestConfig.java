@@ -2,13 +2,15 @@ package com.w2a.utilities;
 public class TestConfig{
 
 
-	
+	//server info and sender/reciever info
 	public static String server="smtp.gmail.com";
 	public static String from = "vaffaproject@gmail.com";
 	public static String password = "Selenium@123";
+	//an array of all the emails you can send the report to
 	public static String[] to ={"seleniumcoaching@gmail.com","trainer@way2automation.com"};
+
+	//message and attatchment of email
 	public static String subject = "Extent Project Report";
-	
 	public static String messageBody ="TestMessage";
 	public static String attachmentPath="c:\\screenshot\\2017_10_3_14_49_9.jpg";
 	public static String attachmentName="error.jpg";
