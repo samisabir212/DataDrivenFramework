@@ -38,11 +38,13 @@ public class TestUtil extends TestBase {
 		int cols = excel.getColumnCount(sheetName);
 
 		Object[][] data = new Object[rows - 1][1];
-		
+
+		//initializing the hashtable
 		Hashtable<String,String> table = null;
 
 		for (int rowNum = 2; rowNum <= rows; rowNum++) { // 2
 
+			//creating a table called table
 			table = new Hashtable<String,String>();
 			
 			for (int colNum = 0; colNum < cols; colNum++) {

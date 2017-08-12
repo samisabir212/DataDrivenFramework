@@ -41,9 +41,11 @@ public class TestBase {
 	public static Properties config = new Properties();
 	public static Properties OR = new Properties();
 	public static FileInputStream fis;
+	//use apache getLogger method not java util .... devpinoylogger is a standard name for the logger
 	public static Logger log = Logger.getLogger("devpinoyLogger");
 	public static ExcelReader excel = new ExcelReader(
-			System.getProperty("user.dir") + "src/test/resources/excel/testdata.xlsx");
+			System.getProperty("user.dir") + "/src/test/resources/excel/testdata.xlsx");
+
 
 
 	public static WebDriverWait wait;
@@ -52,7 +54,7 @@ public class TestBase {
 	public static String browser;
 
 	@BeforeSuite
-	public void setUp() {
+	public void setUp() throws InterruptedException {
 
 		//Setting driver to null
 		if (driver == null) {
@@ -92,31 +94,44 @@ public class TestBase {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+
+
+			//initializing the browser system environment
 			if(System.getenv("browser")!=null){
 				
 				browser = System.getenv("browser");
 
 			}else{
-				
+
+
 				browser = config.getProperty("browser");
 				
 			}
-			
+
+
+			//setting the browser property variable in par with properties file
+			//key and value setProperty method
 			config.setProperty("browser", browser);
 
 
 			if (config.getProperty("browser").equals("firefox")) {
 
 				System.setProperty("webdriver.gecko.driver",
-						System.getProperty("user.dir") + "/src/test/resources/executables/geckodriverMAC");				driver = new FirefoxDriver();
+						System.getProperty("user.dir") + "/src/test/resources/executables/geckodriverMAC");
+				driver = new FirefoxDriver();
+
+
 
 			} else if (config.getProperty("browser").equals("chrome")) {
+
+
 
 				System.setProperty("webdriver.chrome.driver",
 						System.getProperty("user.dir") + "/src/test/resources/executables/chromedriver");
 				driver = new ChromeDriver();
 				log.debug("Chrome Launched !!!");
+
+
 			} else if (config.getProperty("browser").equals("safari")) {
 
 				System.setProperty("webdriver.ie.driver",
@@ -125,13 +140,17 @@ public class TestBase {
 
 			}
 
-
+			//driver is opening browser with chosen URL from CONFIG properties file
 			driver.get(config.getProperty("testsiteurl"));
+
+			sleepFor(8);
 			log.debug("Navigated to : " + config.getProperty("testsiteurl"));
+
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(Integer.parseInt(config.getProperty("implicit.wait")),
 					TimeUnit.SECONDS);
 			wait = new WebDriverWait(driver, 5);
+
 		}
 
 	}
