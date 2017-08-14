@@ -21,9 +21,9 @@
 	
 	
 	<test name="Add Customer Test Simple Setup">
-		<!--<classes>
+		<classes>
 			<class name="com.w2a.testcases.AddCustomerTestSimple" />
-		</classes>-->
+		</classes>
 	</test> <!-- Test -->
 
 
@@ -51,8 +51,8 @@
 
 		  <classes>
 
-			  <class name="com.w2a.testcases.launchTest"/>
-
+			 <!-- <class name="com.w2a.testcases.launchTest"/>
+-->
 		  </classes>
 
 	</test>
