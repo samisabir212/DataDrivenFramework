@@ -37,6 +37,8 @@ public class TestBase {
 	 * 
 	 */
 
+	public static String firstTestData = "/src/test/resources/excel/testdata.xlsx";
+	public static String simpleExcelTestlec7 = "/src/test/resources/excel/simpletestLec7.xlsx";
 	public static WebDriver driver;
 	public static Properties config = new Properties();
 	public static Properties OR = new Properties();
@@ -44,11 +46,13 @@ public class TestBase {
 	//use apache getLogger method not java util .... devpinoylogger is a standard name for the logger
 	public static Logger log = Logger.getLogger("devpinoyLogger");
 	public static ExcelReader excel = new ExcelReader(
-			System.getProperty("user.dir") + "/src/test/resources/excel/testdata.xlsx");
+			System.getProperty("user.dir") + simpleExcelTestlec7);
+
 
 
 
 	public static WebDriverWait wait;
+
 	public ExtentReports rep = ExtentManager.getInstance();
 	public static ExtentTest test;
 	public static String browser;

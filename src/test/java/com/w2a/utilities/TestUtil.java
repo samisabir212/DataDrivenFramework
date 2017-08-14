@@ -18,15 +18,23 @@ public class TestUtil extends TestBase {
 	public static String screenshotPath;
 	public static String screenshotName;
 
+
+	//this method is used well in the listeners class "onTestFailure"
 	public static void captureScreenshot() throws IOException {
 
+
+		//returns you a file
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
 		Date d = new Date();
+
 		screenshotName = d.toString().replace(":", "_").replace(" ", "_") + ".jpg";
 
+		//must copy file to particular location must use fileutils class
+		//create a screenshot path called screenshotpath you dont have to use it.
+		//the fill will be coppied and saved in the surefire html folder.
 		FileUtils.copyFile(scrFile,
-				new File(System.getProperty("user.dir") + "\\target\\surefire-reports\\html\\" + screenshotName));
+				new File(System.getProperty("user.dir") + "/target/surefire-reports/html/" + screenshotName));
 
 	}
 
