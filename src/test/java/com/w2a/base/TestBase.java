@@ -46,7 +46,7 @@ public class TestBase {
 	//use apache getLogger method not java util .... devpinoylogger is a standard name for the logger
 	public static Logger log = Logger.getLogger("devpinoyLogger");
 	public static ExcelReader excel = new ExcelReader(
-			System.getProperty("user.dir") + simpleExcelTestlec7);
+			System.getProperty("user.dir") + firstTestData);
 
 
 

@@ -22,9 +22,10 @@ import java.io.IOException;
  */
 
 
-public class AddCustomerTestSimple2 extends TestBase {
+/*this test is supposed to fail and show a screenshot in the reports
+* the last name is failing*/
 
-    CustomListeners customListeners = new CustomListeners();
+public class AddCustomerTestSimple2 extends TestBase {
 
 
 
@@ -54,7 +55,7 @@ public class AddCustomerTestSimple2 extends TestBase {
 
         sleepFor(3);
         // driver.findElement(By.xpath(".//input[@ng-model='lName']")).sendKeys(lastname);
-        type("lastname_XPATH", lastname);
+        type("lastnam_XPATH", lastname);
         Reporter.log("last name entered from excel");
 
 /*

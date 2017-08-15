@@ -25,7 +25,9 @@ public class AddCustomerTest extends TestBase {
 			throw new SkipException("Skipping the test case as the Run mode for data set is NO");
 		}
 		
-		
+
+
+		//click("bmlBtn_CSS");
 		click("addCustBtn_CSS");
 		type("firstname_CSS",data.get("firstname"));
 		type("lastname_XPATH",data.get("lastname"));
