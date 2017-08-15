@@ -17,12 +17,14 @@ public class BankManagerLoginTest extends TestBase {
 		
 		
 		verifyEquals("abc", "xyz");
-		Thread.sleep(3000);
+		sleepFor(3);
 		log.debug("Inside Login Test");
 		click("bmlBtn_CSS");
 
 		Assert.assertTrue(isElementPresent(By.cssSelector(OR.getProperty("addCustBtn_CSS"))),"Login not successful");
-		
+
+
+
 		log.debug("Login successfully executed");
 		Reporter.log("Login successfully executed");
 		//Assert.fail("Login not successful");

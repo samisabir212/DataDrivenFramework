@@ -43,9 +43,9 @@ public class TestUtil extends TestBase {
 
 	//common base data providor utilizing excel data
 	@DataProvider(name="dp")
-	public Object[][] getData(Method m) {
+	public Object[][] getData(Method m) { //m gets the method name and passed on
 
-		String sheetName = m.getName();
+		String sheetName = m.getName(); //gets the method name as a string
 		int rows = excel.getRowCount(sheetName);
 		int cols = excel.getColumnCount(sheetName);
 
@@ -73,7 +73,8 @@ public class TestUtil extends TestBase {
 
 	}
 	
-	
+
+
 	public static boolean isTestRunnable(String testName, ExcelReader excel){
 		
 		String sheetName="test_suite";

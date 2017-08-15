@@ -45,6 +45,7 @@
 		</dependency>
 
 
+		<!--CHECKK YOUR RESOURCE BELOW MAKE SURE YOU UPDATE THE PROPERTIES SOURCE LOCATION-->
 		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
 		<dependency>
 			<groupId>log4j</groupId>
@@ -137,7 +138,12 @@
 
 		</plugins>
 		
-		
+
+
+
+		<!--including testresource file into the xml test file from the POM.xml file
+		just including the log4j.properties file
+		THE TEST RESOURCE DIRECTORY THAT STORED IN THE PROPERTIES FOLDER-->
 		<testResources>
       <testResource>
         <directory>src/test/resources/properties</directory>

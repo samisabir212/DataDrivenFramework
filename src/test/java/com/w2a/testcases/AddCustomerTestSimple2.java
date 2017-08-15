@@ -22,15 +22,16 @@ import java.io.IOException;
  */
 
 
-public class AddCustomerTestSimple extends TestBase {
+public class AddCustomerTestSimple2 extends TestBase {
 
     CustomListeners customListeners = new CustomListeners();
 
 
 
     //with data providor we are adding the getData method
-    @Test(dataProvider = "getData")
+    @Test(dataProviderClass = TestUtil.class, dataProvider = "dp")
     public void addCustomer(String firstname, String lastname, String postcode) throws InterruptedException, IOException {
+
 
 
         //driver.findElement(By.cssSelector(OR.getProperty("bmlBtn"))).click();
@@ -46,13 +47,13 @@ public class AddCustomerTestSimple extends TestBase {
         Reporter.log("add customer button clicked");
 
         sleepFor(4);
-       // driver.findElement(By.cssSelector(OR.getProperty("firstname"))).sendKeys(firstname);
+        // driver.findElement(By.cssSelector(OR.getProperty("firstname"))).sendKeys(firstname);
         type("firstname_CSS", firstname);
         Reporter.log("first name entered from excel");
 
 
         sleepFor(3);
-       // driver.findElement(By.xpath(".//input[@ng-model='lName']")).sendKeys(lastname);
+        // driver.findElement(By.xpath(".//input[@ng-model='lName']")).sendKeys(lastname);
         type("lastname_XPATH", lastname);
         Reporter.log("last name entered from excel");
 

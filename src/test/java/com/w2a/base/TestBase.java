@@ -193,6 +193,7 @@ public class TestBase {
 	
 	static WebElement dropdown;
 
+	//selecting by individual dropdown object or single object with text
 	public void select(String locator, String value) {
 
 		if (locator.endsWith("_CSS")) {
@@ -225,6 +226,7 @@ public class TestBase {
 
 	}
 
+	//implements a screenshot on failure
 	public static void verifyEquals(String expected, String actual) throws IOException {
 
 		try {

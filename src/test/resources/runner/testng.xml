@@ -10,18 +10,23 @@
     
     
 	<test name="Bank Manager Login Test">
-		<classes>
-<!--
+	<!--	<classes>
 			<class name="com.w2a.testcases.BankManagerLoginTest" />
--->
-		</classes>
+		</classes>-->
 	</test>
 	
 	
-	<test name="Add Customer Test Simple Setup">
-		<classes>
+	<test name="Add Customer Test Simple Setup without common DP">
+	<!--	<classes>
 			<class name="com.w2a.testcases.AddCustomerTestSimple" />
-		</classes>
+		</classes>-->
+	</test> <!-- Test -->
+
+
+	<test name="Add Customer Test Simple Setup #2">
+		<!--<classes>
+			<class name="com.w2a.testcases.AddCustomerTestSimple2" />
+		</classes>-->
 	</test> <!-- Test -->
 
 
@@ -39,9 +44,7 @@
 
 	<test name="Open Account Test">
 		<classes>
-<!--
 			<class name="com.w2a.testcases.OpenAccountTest" />
--->
 		</classes>
 	</test> <!-- Test -->
 
