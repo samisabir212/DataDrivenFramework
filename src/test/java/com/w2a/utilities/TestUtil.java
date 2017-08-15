@@ -28,6 +28,8 @@ public class TestUtil extends TestBase {
 
 		Date d = new Date();
 
+
+		//non hardcoded
 		screenshotName = d.toString().replace(":", "_").replace(" ", "_") + ".jpg";
 
 		//must copy file to particular location must use fileutils class
@@ -38,6 +40,8 @@ public class TestUtil extends TestBase {
 
 	}
 
+
+	//common base data providor utilizing excel data
 	@DataProvider(name="dp")
 	public Object[][] getData(Method m) {
 
@@ -48,6 +52,7 @@ public class TestUtil extends TestBase {
 		Object[][] data = new Object[rows - 1][1];
 
 		//initializing the hashtable
+		//storing (Puting) the excel data into this hashtable
 		Hashtable<String,String> table = null;
 
 		for (int rowNum = 2; rowNum <= rows; rowNum++) { // 2

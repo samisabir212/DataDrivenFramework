@@ -53,8 +53,9 @@ public class TestBase {
 
 	public static WebDriverWait wait;
 
+	//returns extentreport its self
 	public ExtentReports rep = ExtentManager.getInstance();
-	public static ExtentTest test;
+	public static ExtentTest test; //defines all the logs
 	public static String browser;
 
 	@BeforeSuite
@@ -173,7 +174,7 @@ public class TestBase {
 		} else if (locator.endsWith("_ID")) {
 			driver.findElement(By.id(OR.getProperty(locator))).click();
 		}
-		test.log(LogStatus.INFO, "Clicking on : " + locator);
+		test.log(LogStatus.INFO, "Clicking on : " + locator); //this logs our confirmation on clicking on object
 	}
 
 	public void type(String locator, String value) {

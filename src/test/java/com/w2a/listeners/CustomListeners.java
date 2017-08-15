@@ -50,7 +50,11 @@ public class CustomListeners extends TestBase implements ITestListener,ISuiteLis
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
+		//when failing it will say....
 		test.log(LogStatus.FAIL, arg0.getName().toUpperCase()+" Failed with exception : "+arg0.getThrowable());
+
+		//when failed add a screen cap and get the screen shot name
 		test.log(LogStatus.FAIL, test.addScreenCapture(TestUtil.screenshotName));
 		
 		
@@ -60,6 +64,7 @@ public class CustomListeners extends TestBase implements ITestListener,ISuiteLis
 		Reporter.log("<br>");
 		Reporter.log("<br>");
 		Reporter.log("<a target=\"_blank\" href="+TestUtil.screenshotName+"><img src="+TestUtil.screenshotName+" height=200 width=200></img></a>");
+		//ending the test and flushing it
 		rep.endTest(test);
 		rep.flush();
 		
@@ -76,17 +81,20 @@ public class CustomListeners extends TestBase implements ITestListener,ISuiteLis
 
 
 	public void onTestStart(ITestResult arg0) {
-
+		//generates the test
+		//on test start we have to tell extent that this is my first test case
+		//telling the test to start
 		test = rep.startTest(arg0.getName().toUpperCase());
 	
 	}
 
+	//the arguement arg) stores the arguement name
 	public void onTestSuccess(ITestResult arg0) {
 
 
 		test.log(LogStatus.PASS, arg0.getName().toUpperCase()+" PASS");
 		rep.endTest(test);
-		rep.flush();
+		rep.flush(); //flush the report else report will not generate
 		
 	}
 
