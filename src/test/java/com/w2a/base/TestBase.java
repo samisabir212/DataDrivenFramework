@@ -48,14 +48,12 @@ public class TestBase {
 	public static ExcelReader excel = new ExcelReader(
 			System.getProperty("user.dir") + firstTestData);
 
-
-
-
 	public static WebDriverWait wait;
 
 	//returns extentreport its self
 	public ExtentReports extentREP = ExtentManager.getInstance();
 	public static ExtentTest test; //defines all the logs
+	//used for jenkins browser parameter
 	public static String browser;
 
 	@BeforeSuite
@@ -102,14 +100,16 @@ public class TestBase {
 			}
 
 
-			//initializing the browser system environment
+			//initializing the browser system environment utilizing jenkins
+			//if browser in enironment is not empty then browser is the jenkins chosen parameter
 			if(System.getenv("browser")!=null){
-				
+
+				//use the jenkins environment
 				browser = System.getenv("browser");
 
 			}else{
 
-
+				//use properties browser parameter
 				browser = config.getProperty("browser");
 				
 			}

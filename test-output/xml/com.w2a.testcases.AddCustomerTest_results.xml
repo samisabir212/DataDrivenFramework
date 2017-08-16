@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="Add Customer Test"
-           tests="1"
+           tests="4"
            failures="0"
            errors="0"
-           skipped="1"
+           skipped="4"
            time="0.000">
   <properties />
   
+            <testcase name="addCustomerTest" time="0.0" classname="com.w2a.testcases.AddCustomerTest">
+          <skipped />
+    </testcase>
+            <testcase name="addCustomerTest" time="0.0" classname="com.w2a.testcases.AddCustomerTest">
+          <skipped />
+    </testcase>
+            <testcase name="addCustomerTest" time="0.0" classname="com.w2a.testcases.AddCustomerTest">
+          <skipped />
+    </testcase>
             <testcase name="addCustomerTest" time="0.0" classname="com.w2a.testcases.AddCustomerTest">
           <skipped />
     </testcase>
