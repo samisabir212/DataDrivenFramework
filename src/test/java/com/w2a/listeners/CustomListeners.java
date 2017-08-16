@@ -65,8 +65,8 @@ public class CustomListeners extends TestBase implements ITestListener,ISuiteLis
 		Reporter.log("<br>");
 		Reporter.log("<a target=\"_blank\" href="+TestUtil.screenshotName+"><img src="+TestUtil.screenshotName+" height=200 width=200></img></a>");
 		//ending the test and flushing it
-		rep.endTest(test);
-		rep.flush();
+		extentREP.endTest(test);
+		extentREP.flush();
 		
 	}
 
@@ -74,8 +74,8 @@ public class CustomListeners extends TestBase implements ITestListener,ISuiteLis
 
 
 		test.log(LogStatus.SKIP, arg0.getName().toUpperCase()+" Skipped the test as the Run mode is NO");
-		rep.endTest(test);
-		rep.flush();
+		extentREP.endTest(test);
+		extentREP.flush();
 		
 	}
 
@@ -84,7 +84,15 @@ public class CustomListeners extends TestBase implements ITestListener,ISuiteLis
 		//generates the test
 		//on test start we have to tell extent that this is my first test case
 		//telling the test to start
-		test = rep.startTest(arg0.getName().toUpperCase());
+		test = extentREP.startTest(arg0.getName().toUpperCase());
+
+		if (!TestUtil.isTestRunnable(arg0.getName(), excel)) {
+
+			throw new SkipException("Skipping the test "
+					+ arg0.getName().toUpperCase() + " as the run mode is NO ");
+
+
+		}
 	
 	}
 
@@ -93,8 +101,8 @@ public class CustomListeners extends TestBase implements ITestListener,ISuiteLis
 
 
 		test.log(LogStatus.PASS, arg0.getName().toUpperCase()+" PASS");
-		rep.endTest(test);
-		rep.flush(); //flush the report else report will not generate
+		extentREP.endTest(test);
+		extentREP.flush(); //flush the report else report will not generate
 		
 	}
 

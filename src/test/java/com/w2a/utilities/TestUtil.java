@@ -40,7 +40,6 @@ public class TestUtil extends TestBase {
 
 	}
 
-
 	//common base data providor utilizing excel data
 	@DataProvider(name="dp")
 	public Object[][] getData(Method m) { //m gets the method name and passed on
@@ -55,15 +54,20 @@ public class TestUtil extends TestBase {
 		//storing (Puting) the excel data into this hashtable
 		Hashtable<String,String> table = null;
 
+		//the for loop for rows
 		for (int rowNum = 2; rowNum <= rows; rowNum++) { // 2
 
 			//creating a table called table
 			table = new Hashtable<String,String>();
-			
+
+			//the for loop for columns
 			for (int colNum = 0; colNum < cols; colNum++) {
 
-				// data[0][0]
+				// data[0][0]..... //data[row][col]
+				//this is where its extracting and putting the data in the table
+				//remember that you add objects to hashtable by puting th key and value into it
 				table.put(excel.getCellData(sheetName, colNum, 1), excel.getCellData(sheetName, colNum, rowNum));
+				//the zero column and zero row should be the first table
 				data[rowNum - 2][0] = table;
 			}
 
@@ -74,7 +78,7 @@ public class TestUtil extends TestBase {
 	}
 	
 
-
+	//being utilized in the customlisteners class
 	public static boolean isTestRunnable(String testName, ExcelReader excel){
 		
 		String sheetName="test_suite";

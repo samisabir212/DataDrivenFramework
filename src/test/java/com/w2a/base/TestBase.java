@@ -54,7 +54,7 @@ public class TestBase {
 	public static WebDriverWait wait;
 
 	//returns extentreport its self
-	public ExtentReports rep = ExtentManager.getInstance();
+	public ExtentReports extentREP = ExtentManager.getInstance();
 	public static ExtentTest test; //defines all the logs
 	public static String browser;
 
@@ -71,6 +71,7 @@ public class TestBase {
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+
 			}
 
 			//loading the config properties file

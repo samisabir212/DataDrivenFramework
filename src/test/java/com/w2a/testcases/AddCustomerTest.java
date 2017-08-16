@@ -19,7 +19,8 @@ public class AddCustomerTest extends TestBase {
 	
 	@Test(dataProviderClass=TestUtil.class,dataProvider="dp")
 	public void addCustomerTest(Hashtable<String,String> data) throws InterruptedException{
-		
+
+		//specifying the data which should run by using Y or N    yes or no run mode for this testcase
 		if(!data.get("runmode").equals("Y")){
 			
 			throw new SkipException("Skipping the test case as the Run mode for data set is NO");

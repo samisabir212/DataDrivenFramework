@@ -19,7 +19,7 @@ public class BankManagerLoginTest extends TestBase {
 		verifyEquals("abc", "xyz");
 		sleepFor(3);
 		log.debug("Inside Login Test");
-		click("bmlBtn_CSS");
+		//click("bmlBtn_CSS");
 
 		Assert.assertTrue(isElementPresent(By.cssSelector(OR.getProperty("addCustBtn_CSS"))),"Login not successful");
 
