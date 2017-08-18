@@ -21,6 +21,8 @@ public class TestHostAdd {
 		/*
 		* gets the local host address number
 		* */
+
+
 		System.out.println(InetAddress.getLocalHost().getHostAddress());
 
 
@@ -33,6 +35,8 @@ public class TestHostAdd {
 		System.out.println(messageBody);
 		
 		mail.sendMail(TestConfig.server, TestConfig.from, TestConfig.to, TestConfig.subject, messageBody);
+
+
 
 	}
 

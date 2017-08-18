@@ -4,10 +4,10 @@ public class TestConfig{
 
 	//server info and sender/reciever info
 	public static String server="smtp.gmail.com";
-	public static String from = "vaffaproject@gmail.com";
-	public static String password = "Selenium@123";
+	public static String from = "seleniumqa212@gmail.com";
+	public static String password = "Selenium212";
 	//an array of all the emails you can send the report to
-	public static String[] to ={"seleniumcoaching@gmail.com","trainer@way2automation.com"};
+	public static String[] to ={"samisabir22@gmail.com","samisabir212@gmail.com"};
 
 	//message and attatchment of email
 	public static String subject = "Extent Project Report";
