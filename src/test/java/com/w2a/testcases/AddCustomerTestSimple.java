@@ -29,7 +29,7 @@ public class AddCustomerTestSimple extends TestBase {
 
 
     //with data providor we are adding the getData method
-    @Test(dataProvider = "getData")
+    @Test(enabled = false,dataProvider = "getData")
     public void addCustomer(String firstname, String lastname, String postcode) throws InterruptedException, IOException {
 
 

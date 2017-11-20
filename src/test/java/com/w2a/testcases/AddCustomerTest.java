@@ -17,7 +17,7 @@ public class AddCustomerTest extends TestBase {
 	//implementing excel in this test
 	
 	
-	@Test(dataProviderClass=TestUtil.class,dataProvider="dp")
+	@Test(enabled = false,dataProviderClass=TestUtil.class,dataProvider="dp")
 	public void addCustomerTest(Hashtable<String,String> data) throws InterruptedException{
 
 		//specifying the data which should run by using Y or N    yes or no run mode for this testcase

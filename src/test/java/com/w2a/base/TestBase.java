@@ -56,6 +56,13 @@ public class TestBase {
 	//used for jenkins browser parameter
 	public static String browser;
 
+
+
+	/*
+	*
+	* ********************************INITIAL TEST BASE SETUP FOR  NON GRID ENVIRONMENT TEST BASE********************************************
+	*
+	* */
 	@BeforeSuite
 	public void setUp() throws InterruptedException {
 
@@ -149,7 +156,7 @@ public class TestBase {
 			//driver is opening browser with chosen URL from CONFIG properties file
 			driver.get(config.getProperty("testsiteurl"));
 
-			sleepFor(8);
+			//sleepFor(8);
 			log.debug("Navigated to : " + config.getProperty("testsiteurl"));
 
 			driver.manage().window().maximize();
@@ -160,6 +167,25 @@ public class TestBase {
 		}
 
 	}
+
+
+
+
+	@AfterSuite
+	public void tearDown() {
+
+		if (driver != null) {
+			driver.quit();
+		}
+
+		log.debug("test execution completed !!!");
+	}
+
+	/*
+	*
+	* ***********************************ALL METHODS AND INTERACTIONS WITH WEB APP*******************************************
+	* */
+
 
 	public void sleepFor(int sec) throws InterruptedException {
 		Thread.sleep(sec * 1000);
@@ -251,13 +277,5 @@ public class TestBase {
 
 	}
 
-	@AfterSuite
-	public void tearDown() {
 
-		if (driver != null) {
-			driver.quit();
-		}
-
-		log.debug("test execution completed !!!");
-	}
 }

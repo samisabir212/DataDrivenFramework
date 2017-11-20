@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="Launch a browser"
-           tests="1"
+           tests="2"
            failures="0"
            errors="0"
            skipped="0"
-           time="5.124">
+           time="1.053">
   <properties />
   
   
-            <testcase name="customerLogin" time="5.124" classname="com.w2a.testcases.launchTest" />
+            <testcase name="launchChrome" time="0.001" classname="com.w2a.testcases.launchTest" />
+                <testcase name="customerLogin" time="1.052" classname="com.w2a.testcases.launchTest" />
       
 </testsuite>

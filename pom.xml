@@ -19,7 +19,7 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>2.53.1</version>
+			<version>3.4.0</version>
 		</dependency>
 
 
@@ -151,7 +151,7 @@
           <include>log4j.properties</include>
         </includes>
       </testResource>
-    </testResources>
+    </testResources>`
 		
 		
 	</build>

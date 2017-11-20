@@ -1,7 +1,8 @@
-17/08/2017 18:11:24 devpinoyLogger Config file loaded !!!
-17/08/2017 18:11:24 devpinoyLogger OR file loaded !!!
-17/08/2017 18:11:25 devpinoyLogger Chrome Launched !!!
-17/08/2017 18:11:36 devpinoyLogger Navigated to : http://www.way2automation.com/angularjs-protractor/banking/#/manager
-17/08/2017 18:11:39 devpinoyLogger Inside Login Test
-17/08/2017 18:11:39 devpinoyLogger Login successfully executed
-17/08/2017 18:11:58 devpinoyLogger test execution completed !!!
+18/11/2017 12:12:05 devpinoyLogger Config file loaded !!!
+18/11/2017 12:12:05 devpinoyLogger OR file loaded !!!
+18/11/2017 12:12:07 devpinoyLogger Chrome Launched !!!
+18/11/2017 12:12:10 devpinoyLogger Navigated to : http://www.way2automation.com/angularjs-protractor/banking/#/manager
+18/11/2017 12:12:10 devpinoyLogger inside login test
+18/11/2017 12:12:11 devpinoyLogger bmlBtn_class is present and clicked
+18/11/2017 12:12:11 devpinoyLogger login successful
+18/11/2017 12:12:12 devpinoyLogger test execution completed !!!

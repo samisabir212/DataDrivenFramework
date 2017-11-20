@@ -34,7 +34,7 @@ public class TestUtil extends TestBase {
 
 		//must copy file to particular location must use fileutils class
 		//create a screenshot path called screenshotpath you dont have to use it.
-		//the fill will be coppied and saved in the surefire html folder.
+		//the fill will be copied and saved in the surefire html folder.
 		FileUtils.copyFile(scrFile,
 				new File(System.getProperty("user.dir") + "/target/surefire-reports/html/" + screenshotName));
 
@@ -45,8 +45,8 @@ public class TestUtil extends TestBase {
 	public Object[][] getData(Method m) { //m gets the method name and passed on
 
 		String sheetName = m.getName(); //gets the method name as a string
-		int rows = excel.getRowCount(sheetName);
-		int cols = excel.getColumnCount(sheetName);
+		int rows = excel.getRowCount(sheetName); //getting the row count of the sheet of the testcase
+		int cols = excel.getColumnCount(sheetName); //getting the column of the sheet of the test case
 
 		Object[][] data = new Object[rows - 1][1];
 
@@ -54,7 +54,7 @@ public class TestUtil extends TestBase {
 		//storing (Puting) the excel data into this hashtable
 		Hashtable<String,String> table = null;
 
-		//the for loop for rows
+		//the for loop for rows rows of data starting at row 2 until empty
 		for (int rowNum = 2; rowNum <= rows; rowNum++) { // 2
 
 			//creating a table called table
@@ -81,11 +81,11 @@ public class TestUtil extends TestBase {
 	//being utilized in the customlisteners class
 	public static boolean isTestRunnable(String testName, ExcelReader excel){
 		
-		String sheetName="test_suite";
+		String sheetName = "test_suite";
 		int rows = excel.getRowCount(sheetName);
 		
 		
-		for(int rNum=2; rNum<=rows; rNum++){
+		for(int rNum =  2; rNum <= rows; rNum++){
 			
 			String testCase = excel.getCellData(sheetName, "TCID", rNum);
 			

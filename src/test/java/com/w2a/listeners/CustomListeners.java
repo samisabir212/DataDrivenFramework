@@ -7,13 +7,8 @@ import java.net.UnknownHostException;
 import javax.mail.MessagingException;
 import javax.mail.internet.AddressException;
 
-import org.testng.ISuite;
-import org.testng.ISuiteListener;
-import org.testng.ITestContext;
-import org.testng.ITestListener;
-import org.testng.ITestResult;
-import org.testng.Reporter;
-import org.testng.SkipException;
+import org.apache.log4j.Logger;
+import org.testng.*;
 
 import com.relevantcodes.extentreports.LogStatus;
 import com.w2a.base.TestBase;
@@ -25,7 +20,44 @@ public class CustomListeners extends TestBase implements ITestListener,ISuiteLis
 
 
 
-	public 	String messageBody;
+	public static class Retry implements IRetryAnalyzer {
+
+		public static final Logger log = Logger.getLogger(Retry.class.getName());
+
+		private int retryCount = 0;
+		private int maxRetryCount = 3;
+
+		public boolean retry(ITestResult result) {
+			if (retryCount < maxRetryCount) {
+				log("Retrying test " + result.getName() + " with status " + getResultStatusName(result.getStatus()) + " for the " + (retryCount + 1) + " time(s).");
+				retryCount++;
+
+				Reporter.log("total retry was: " + result );
+				return true;
+			}
+			return false;
+		}
+		public String getResultStatusName(int status) {
+			String resultName = null;
+			if (status == 1)
+				resultName = "SUCCESS";
+			if (status == 2)
+				resultName = "FAILURE";
+			if (status == 3)
+				resultName = "SKIP";
+			return resultName;
+		}
+
+		public void log(String data){
+			log.info(data);
+			Reporter.log(data);
+		}
+
+	}
+
+
+
+	public String messageBody; //used for mailing email for the body of message
 	public void onFinish(ITestContext arg0) {
 		// TODO Auto-generated method stub
 		
@@ -41,6 +73,8 @@ public class CustomListeners extends TestBase implements ITestListener,ISuiteLis
 		
 	}
 
+
+	//key componenet to capture screenshot on failure
 	public void onTestFailure(ITestResult arg0) {
 
 		System.setProperty("org.uncommons.reportng.escape-output","false");
@@ -67,7 +101,7 @@ public class CustomListeners extends TestBase implements ITestListener,ISuiteLis
 		//ending the test and flushing it
 		extentREP.endTest(test);
 		extentREP.flush();
-		
+
 	}
 
 	public void onTestSkipped(ITestResult arg0) {
@@ -135,5 +169,8 @@ public class CustomListeners extends TestBase implements ITestListener,ISuiteLis
 		// TODO Auto-generated method stub
 		
 	}
+
+
+
 
 }

@@ -13,7 +13,7 @@ import com.w2a.utilities.TestUtil;
 
 public class OpenAccountTest extends TestBase {
 
-	@Test(dataProviderClass = TestUtil.class, dataProvider = "dp")
+	@Test(enabled = false,dataProviderClass = TestUtil.class, dataProvider = "dp")
 	public void openAccountTest(Hashtable<String,String> data) throws InterruptedException {
 
 		

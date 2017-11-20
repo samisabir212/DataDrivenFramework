@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 public class launchTest extends TestBase {
 
 
-    @Test(priority = 1, enabled = false)
+    @Test(priority = 1, enabled = true)
     public void launchChrome() throws InterruptedException {
 
 
@@ -23,8 +23,7 @@ public class launchTest extends TestBase {
 
         log.debug("inside login test");
         driver.findElement(By.cssSelector(OR.getProperty("bmlBtn_CSS"))).click();
-        sleepFor(2);
-
+        log.debug("bmlBtn_class is present and clicked");
 
 
 

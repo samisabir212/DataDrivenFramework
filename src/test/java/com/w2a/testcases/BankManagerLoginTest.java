@@ -11,12 +11,16 @@ import com.w2a.base.TestBase;
 
 public class BankManagerLoginTest extends TestBase {
 
+
+	/*
+	* testcase ment to fail to capture screenshot
+	* */
 	
-	@Test
+	@Test(enabled = false)
 	public void bankManagerLoginTest() throws InterruptedException, IOException{
 		
 		
-		verifyEquals("abc", "xyz");
+		verifyEquals("abc", "xyz"); //update this to fail for screenshot
 		sleepFor(3);
 		log.debug("Inside Login Test");
 		//click("bmlBtn_CSS");

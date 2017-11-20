@@ -17,17 +17,17 @@
 	
 	
 	<test name="Add Customer Test Simple Setup without common DP">
-	<!--	<classes>
+		<classes>
 			<class name="com.w2a.testcases.AddCustomerTestSimple" />
-		</classes>-->
-	</test> <!-- Test -->
+		</classes>
+	</test>
 
 
 	<test name="Add Customer Test Simple Setup #2">
-	<!--	<classes>
+		<classes>
 			<class name="com.w2a.testcases.AddCustomerTestSimple2" />
-		</classes>-->
-	</test> <!-- Test -->
+		</classes>
+	</test>
 
 
 
@@ -35,7 +35,7 @@
 		<classes>
 			<class name="com.w2a.testcases.AddCustomerTest" />
 		</classes>
-	</test> <!-- Test -->
+	</test>
 
 
 
@@ -44,7 +44,7 @@
 		<classes>
 			<class name="com.w2a.testcases.OpenAccountTest" />
 		</classes>
-	</test> <!-- Test -->
+	</test>
 
 
 
@@ -52,8 +52,7 @@
 
 		  <classes>
 
-			 <!-- <class name="com.w2a.testcases.launchTest"/>
--->
+			 <class name="com.w2a.testcases.launchTest"/>
 		  </classes>
 
 	</test>
@@ -61,4 +60,4 @@
 
 
 	
-</suite> <!-- Suite -->
+</suite>

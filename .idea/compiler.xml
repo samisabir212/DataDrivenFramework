@@ -11,6 +11,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="DataDrivenFramework" target="1.5" />
+      <module name="TEST" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
